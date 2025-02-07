@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full history is fetched for accurate versioning
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.8.1'  # Ensure you're using a compatible Node.js version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Grant Execute Permission to semantic-release
+        run: chmod +x ./node_modules/.bin/semantic-release
+
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./node_modules/.bin/semantic-release
