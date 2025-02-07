@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/egesez77/workFlow_test/compare/v1.0.2...v1.1.0) (2025-02-07)
+
+
+### Features
+
+* source file of new_api created ([236dd46](https://github.com/egesez77/workFlow_test/commit/236dd46121ccf5e6b1d9b6de120385e9785f94ea))
+
 ## [1.0.2](https://github.com/egesez77/workFlow_test/compare/v1.0.1...v1.0.2) (2025-02-07)
 
 
